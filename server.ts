@@ -25,8 +25,15 @@ export function app(): express.Express {
     index: 'index.html',
   }));
 
+  // This route will do client side rendering
+  server.get('/client-render', (req, res) => {
+    console.log('client route')
+    res.sendFile(join(browserDistFolder, 'index.csr.html'));
+  });
+
   // All regular routes use the Angular engine
   server.get('**', (req, res, next) => {
+    console.log('server route')
     const { protocol, originalUrl, baseUrl, headers } = req;
 
     commonEngine
