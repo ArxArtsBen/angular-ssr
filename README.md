@@ -11,7 +11,7 @@ expected.
 
 Run `nmp run build` to build the project. The build artifacts will be stored in the `dist/` directory. In this step the application will be prebuilt the configured prebuild routes.
 
-## Running prebuilt application
+## Running production/prebuilt application
 
 After generating a new build, run `nmp run serve:ssr` for a dev server. Navigate to `http://localhost:4200/`.
 
